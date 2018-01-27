@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
-	"log"
 	"sort"
 	"strings"
 )
@@ -79,7 +78,6 @@ func (lc *LayoutConfig) String() string {
 	result := make([]string, 0)
 
 	for outputName, outputConfig := range *lc {
-		log.Print(outputName)
 		result = append(result,
 			strings.Join([]string{outputName.String(), outputConfig.String()}, " "))
 	}
