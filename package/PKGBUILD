@@ -1,0 +1,25 @@
+pkgname=xrnd
+pkgver=0.1
+pkgrel=1
+
+pkgdesc="Shortcuts for xrandr"
+url="https://github.com/mluts/xrnd"
+arch=("x86_64")
+license=("MIT")
+
+depends=("xorg-xrandr")
+makedepends=("go")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/mluts/xrnd/archive/v$pkgver.tar.gz")
+sha256sums=('3917a9b8a1c9007380581ad614721e32eb00e855aada20738a7169dc8af21359')
+
+build() {
+  cd $pkgname-$pkgver
+
+  go build
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  install -Dm755 "$pkgname-$pkgver" "$pkgdir/usr/bin/$pkgname"
+}
