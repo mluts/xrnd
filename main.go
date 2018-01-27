@@ -34,7 +34,7 @@ func edit(path string) {
 
 func xrandr(optionsStr string) {
 	options := strings.Split(optionsStr, " ")
-	fmt.Printf("Running: xrandr %v", options)
+	fmt.Printf("Running: xrandr %v\n", options)
 
 	cmd := exec.Command("xrandr", options...)
 	cmd.Stdin = os.Stdin
