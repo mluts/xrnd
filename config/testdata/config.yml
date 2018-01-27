@@ -1,0 +1,9 @@
+---
+layouts:
+  s:
+    eDP1:
+      primary: true
+      left_of: HDMI1
+    HDMI1:
+      primary: false
+      auto: yes
